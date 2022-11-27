@@ -6,15 +6,30 @@
         oninput="this.nextElementSibling.value = this.value">
     <output>4</output>
     <br></br>
-    <label for="mode">Mode:</label>
+    <label for="key">Key:</label>
+    <select name="key" id="key">
+        <option value="c">C</option>
+        <option value="c#">C#</option>
+        <option value="d">D</option>
+        <option value="d#">D#</option>
+        <option value="e">E</option>
+        <option value="f">F</option>
+        <option value="f#">F#</option>
+        <option value="g">G</option>
+        <option value="g#">G#</option>
+        <option value="a">A</option>
+        <option value="a#">A#</option>
+        <option value="b">B</option>
+    </select>
     <select name="mode" id="mode">
-        <option value="major">major</option>
-        <option value="minor">minor</option>
+        <option value="major">Major</option>
+        <option value="minor">Minor</option>
     </select>
     <br></br>
     <button onclick="generateProgression()" id="generate-progression">Compose</button>
     <div id="generated-progression" class="flex-row">
-        <div class="chord-tile flex-column" id="chord-progression"></div>
+        <div id="chord-progression-chords"></div>
+        <div id="chord-progression-numerals"></div>
     </div>
     <script src="script.js"></script>
 </body>
