@@ -1,0 +1,22 @@
+<html>
+
+<body>
+    <label for="num-chords">Number of Chords (2-8):</label>
+    <input type="range" id="num-chords" name="num-chords" value="4" min="2" max="8"
+        oninput="this.nextElementSibling.value = this.value">
+    <output>4</output>
+    <br></br>
+    <label for="mode">Mode:</label>
+    <select name="mode" id="mode">
+        <option value="major">major</option>
+        <option value="minor">minor</option>
+    </select>
+    <br></br>
+    <button onclick="generateProgression()" id="generate-progression">Compose</button>
+    <div id="generated-progression" class="flex-row">
+        <div class="chord-tile flex-column" id="chord-progression"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
