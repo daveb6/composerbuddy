@@ -3,8 +3,6 @@ const numerals = {
   major: ["I", "ii", "iii", "IV", "V", "vi", "viio"],
   minor: ["i", "iio", "III", "iv", "v", "VI", "VII"],
 };
-const keyCmaj = ["Cmaj", "Dmin", "Emin", "Fmaj", "Gmaj", "Amin", "Bdim"];
-const keyAmaj = ["Amin", "Bdim", "Cmaj", "Dmin", "Emin", "Fmaj", "Gmin"];
 
 const scales = {
   c: {
