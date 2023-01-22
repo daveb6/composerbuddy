@@ -1,0 +1,42 @@
+.generated-progression {
+  border: 5px solid;
+  text-align: center;
+}
+
+.chord-progression-chords {
+  border: 5px solid;
+  text-align: center;
+  font-weight: bold;
+}
+
+.input-form {
+  position: relative;
+  background-color: #a5d8ff;
+  border: solid 10px #c49799;
+  padding: 2%;
+  z-index: 2;
+  text-align: center;
+}
+
+.chord-output {
+  position: relative;
+  z-index: 1;
+}
+
+.parent {
+  padding-top: 7%;
+}
+
+body {
+  background-color: #afd0d6;
+  font-family: "Roboto", sans-serif;
+}
+
+.output-chords {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  font-weight: bold;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");

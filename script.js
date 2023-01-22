@@ -87,11 +87,10 @@ function generateProgression() {
     chordProgressionChords.push(scale[chord - 1]);
     chordProgressionNumerals.push(numerals[mode][chord - 1]);
   }
-
-  document.getElementById("chord-progression-numerals").innerHTML =
-    chordProgressionNumerals;
   document.getElementById("chord-progression-chords").innerHTML =
-    chordProgressionChords;
+    "<h2>" + chordProgressionChords + "</h2>";
+  document.getElementById("chord-progression-numerals").innerHTML =
+    "<h4>(" + chordProgressionNumerals + ")</h4>";
 }
 
 function findNextChord(chord, maj) {
