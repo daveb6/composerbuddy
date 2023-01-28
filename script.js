@@ -7,62 +7,62 @@ const numerals = {
 const scales = {
   c: {
     major: ["C", "D", "Em", "F", "G", "Am", "Bdim"],
-    minor: ["Cmin", "Ddim", "Eb", "Fmin", "Gmin", "Ab", "Bb"],
+    minor: ["Cm", "Ddim", "Eb", "Fm", "Gm", "Ab", "Bb"],
   },
 
   "c#": {
-    major: ["C#", "D#", "Fmin", "F#", "G#", "A#min", "Cdim"],
-    minor: ["C#", "D#dim", "E", "F#min", "G#min", "A", "B"],
+    major: ["C#", "D#", "Fm", "F#", "G#", "A#m", "Cdim"],
+    minor: ["C#m", "D#dim", "E", "F#m", "G#m", "A", "B"],
   },
 
   d: {
-    major: ["D", "E", "F#min", "G", "A", "Bmin", "Cdim"],
-    minor: ["Dmin", "Edim", "F", "Gmin", "Amin", "B", "C"],
+    major: ["D", "E", "F#m", "G", "A", "Bm", "Cdim"],
+    minor: ["Dm", "Edim", "F", "Gm", "Am", "B", "C"],
   },
 
   "d#": {
-    major: ["D#", "F", "Gmin", "G#", "A#", "Cmin", "Ddim"],
-    minor: ["D#min", "Fdim", "F#", "G#min", "A#min", "B", "C#"],
+    major: ["D#", "F", "Gm", "G#", "A#", "Cm", "Ddim"],
+    minor: ["D#m", "Fdim", "F#", "G#m", "A#m", "B", "C#"],
   },
 
   e: {
-    major: ["E", "F#", "G#min", "A", "B", "C#min", "D#dim"],
-    minor: ["Emin", "F#dim", "G", "Amin", "Bmin", "C", "D"],
+    major: ["E", "F#", "G#m", "A", "B", "C#m", "D#dim"],
+    minor: ["Em", "F#dim", "G", "Am", "Bm", "C", "D"],
   },
 
   f: {
-    major: ["F", "G", "Am", "A#", "C", "Dmin", "Edim"],
-    minor: ["Fmin", "Gdim", "G#", "A#min", "Cmin", "C#", "D#"],
+    major: ["F", "G", "Am", "A#", "C", "Dm", "Edim"],
+    minor: ["Fm", "Gdim", "G#", "A#m", "Cm", "C#", "D#"],
   },
 
   "f#": {
-    major: ["F#", "G#", "A#min", "B", "C#", "D#min", "Fdim"],
-    minor: ["F#min", "G#dim", "A", "Bmin", "C#min", "D", "E"],
+    major: ["F#", "G#", "A#m", "B", "C#", "D#m", "Fdim"],
+    minor: ["F#m", "G#dim", "A", "Bm", "C#m", "D", "E"],
   },
 
   g: {
-    major: ["G", "A", "Bmin", "C", "D", "Emin", "F#dim"],
-    minor: ["Gmin", "Adim", "A#", "Cmin", "Dmin", "D#", "F"],
+    major: ["G", "A", "Bm", "C", "D", "Em", "F#dim"],
+    minor: ["Gm", "Adim", "A#", "Cm", "Dm", "D#", "F"],
   },
 
   "g#": {
-    major: ["G#", "A#", "Cmin", "C#", "D#", "Fmin", "Gdim"],
-    minor: ["G#min", "A#dim", "B", "C#min", "D#min", "E", "F#"],
+    major: ["G#", "A#", "Cm", "C#", "D#", "Fm", "Gdim"],
+    minor: ["G#m", "A#dim", "B", "C#m", "D#m", "E", "F#"],
   },
 
   a: {
-    major: ["A", "B", "C#min", "D", "E", "F#min", "G#dim"],
-    minor: ["Amin", "Bdim", "C", "Dmin", "Emin", "F", "G"],
+    major: ["A", "B", "C#m", "D", "E", "F#m", "G#dim"],
+    minor: ["Am", "Bdim", "C", "Dm", "Em", "F", "G"],
   },
 
   "a#": {
-    major: ["A#", "C", "Dmin", "D#", "F", "Gmin", "Adim"],
-    minor: ["A#min", "Cdim", "C#", "D#min", "Fmin", "F#", "G#"],
+    major: ["A#", "C", "Dm", "D#", "F", "Gm", "Adim"],
+    minor: ["A#m", "Cdim", "C#", "D#m", "Fm", "F#", "G#"],
   },
 
   b: {
-    major: ["B", "C#", "D#min", "E", "F#", "G#min", "A#dim"],
-    minor: ["Bmin", "C#dim", "D", "Emin", "F#min", "G", "A"],
+    major: ["B", "C#", "D#m", "E", "F#", "G#m", "A#dim"],
+    minor: ["Bm", "C#dim", "D", "Em", "F#m", "G", "A"],
   },
 };
 
