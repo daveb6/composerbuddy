@@ -1,9 +1,21 @@
+const polySynth = new Tone.PolySynth({
+  polyphony: 4,
+  oscillator: {
+    type: "triangle",
+  },
+}).toMaster();
+
 const startingChords = [1, 4, 6];
+const intervals = {
+  Major: [4, 7],
+  Minor: [3, 7],
+  Diminished: [3, 6],
+};
 const numerals = {
   major: ["I", "ii", "iii", "IV", "V", "vi", "viio"],
   minor: ["i", "iio", "III", "iv", "v", "VI", "VII"],
 };
-
+const notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]; //possibly rename
 const scales = {
   c: {
     major: ["C", "D", "Em", "F", "G", "Am", "Bdim"],
@@ -87,6 +99,11 @@ function generateProgression() {
     chordProgressionChords.push(scale[chord - 1]);
     chordProgressionNumerals.push(numerals[mode][chord - 1]);
   }
+
+  //findNotes(chordProgressionChords, numChords, chordProgressionInts);
+
+  findChordNotes(chordProgressionChords);
+
   document.getElementById("chord-progression-chords").innerHTML =
     "<h2>" + chordProgressionChords + "</h2>";
   document.getElementById("chord-progression-numerals").innerHTML =
@@ -192,4 +209,54 @@ function findNextChord(chord, maj) {
     }
   }
   return nextChord;
+}
+
+function findChordNotes(chords) {
+  progressionNotes = [];
+
+  // find type of chord to assign intervals
+  chords.forEach(function (root) {
+    let chordNotes = [];
+    if (root.indexOf("m") !== -1) {
+      chordType = "Minor";
+    } else if (root.indexOf("di") !== -1) {
+      chordType = "Diminished";
+    } else {
+      chordType = "Major";
+    }
+
+    // remove unneeded characters for note name
+    root = root.substring(0, 1);
+
+    // find notes in chord
+    chordNotes = [root];
+    intervals[chordType].forEach((interval) => {
+      let index = notes.indexOf(root);
+      index = (index + interval) % 12;
+      chordNotes.push(notes[index]);
+    });
+    progressionNotes = progressionNotes.concat([chordNotes]);
+  });
+  playSound(progressionNotes);
+}
+
+function playSound(progressionNotes) {
+  delay = 0;
+  progressionNotes.forEach(function (notes) {
+    let notesWithOctave = notes.map((item) => item + 4);
+    playChords(notesWithOctave, delay);
+    delay = delay + 1000;
+  });
+}
+
+function playChords(notes, delay) {
+  // convert the notes to frequency values
+  const frequencies = notes.map((note) => Tone.Frequency(note));
+  // play the chord after a delay
+  setTimeout(() => {
+    polySynth.triggerAttack(frequencies);
+    setTimeout(() => {
+      polySynth.triggerRelease(frequencies);
+    }, 400);
+  }, delay);
 }
