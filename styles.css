@@ -39,4 +39,16 @@ body {
   font-weight: bold;
 }
 
+#mute-button {
+  background-image: url(images/unmute-icon.svg);
+  background-size: cover;
+  padding: 3%;
+}
+
+#mute-button.muted {
+  background-image: url(images/mute-icon.svg);
+  background-size: cover;
+  padding: 3%;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");

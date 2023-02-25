@@ -5,6 +5,8 @@ const polySynth = new Tone.PolySynth({
   },
 }).toMaster();
 
+var muteButton = document.getElementById("mute-button");
+var isMuted = false;
 const startingChords = [1, 4, 6];
 const intervals = {
   Major: [4, 7],
@@ -78,6 +80,21 @@ const scales = {
   },
 };
 
+// Add a click event listener to the button
+muteButton.addEventListener("click", function () {
+  if (isMuted) {
+    // Toggle the master volume mute property
+    Tone.Master.mute = !Tone.Master.mute;
+    muteButton.classList.remove("muted");
+    isMuted = false;
+  } else {
+    // Toggle the master volume mute property
+    Tone.Master.mute = !Tone.Master.mute;
+    muteButton.classList.add("muted");
+    isMuted = true;
+  }
+});
+
 function generateProgression() {
   chordProgressionInts = [];
   chordProgressionNumerals = [];
@@ -99,8 +116,6 @@ function generateProgression() {
     chordProgressionChords.push(scale[chord - 1]);
     chordProgressionNumerals.push(numerals[mode][chord - 1]);
   }
-
-  //findNotes(chordProgressionChords, numChords, chordProgressionInts);
 
   findChordNotes(chordProgressionChords);
 
@@ -242,6 +257,7 @@ function findChordNotes(chords) {
 
 function playSound(progressionNotes) {
   delay = 0;
+
   progressionNotes.forEach(function (notes) {
     let notesWithOctave = notes.map((item) => item + 4);
     playChords(notesWithOctave, delay);
