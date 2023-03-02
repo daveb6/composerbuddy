@@ -5,7 +5,9 @@ const polySynth = new Tone.PolySynth({
   },
 }).toMaster();
 
+var currentChords;
 var muteButton = document.getElementById("mute-button");
+var repeatButton = document.getElementById("repeat-button");
 var isMuted = false;
 const startingChords = [1, 4, 6];
 const intervals = {
@@ -95,6 +97,11 @@ muteButton.addEventListener("click", function () {
   }
 });
 
+repeatButton.addEventListener("click", function () {
+  console.log(currentChords);
+  findChordNotes(currentChords);
+});
+
 function generateProgression() {
   chordProgressionInts = [];
   chordProgressionNumerals = [];
@@ -116,7 +123,7 @@ function generateProgression() {
     chordProgressionChords.push(scale[chord - 1]);
     chordProgressionNumerals.push(numerals[mode][chord - 1]);
   }
-
+  currentChords = chordProgressionChords;
   findChordNotes(chordProgressionChords);
 
   document.getElementById("chord-progression-chords").innerHTML =
