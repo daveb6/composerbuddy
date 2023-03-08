@@ -39,6 +39,12 @@ body {
   font-weight: bold;
 }
 
+#repeat-button {
+  background-image: url(images/repeat-icon.png);
+  background-size: cover;
+  padding: 3%;
+}
+
 #mute-button {
   background-image: url(images/unmute-icon.svg);
   background-size: cover;
