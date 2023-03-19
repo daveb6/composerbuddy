@@ -20,7 +20,7 @@ jobs:
           submodules: true
 
       - name: Create temporary package.json
-        uses: spier/create-file-action@v1.0
+        uses: spier/file@v1
         with:
           path: package.json
           content: |
