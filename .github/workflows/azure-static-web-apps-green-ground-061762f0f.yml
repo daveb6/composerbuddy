@@ -20,14 +20,7 @@ jobs:
           submodules: true
 
       - name: Create temporary package.json
-        uses: spier/file@v1
-        with:
-          path: package.json
-          content: |
-            {
-              "private": true,
-              "dependencies": {}
-            }
+        run: echo '{ "private": true, "dependencies": {} }' > package.json
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
