@@ -20,7 +20,8 @@ jobs:
           submodules: true
 
       - name: Create temporary package.json
-        run: echo '{ "private": true, "dependencies": {} }' > package.json
+        run: |
+          echo '{ "private": true, "dependencies": {} }' > package.json
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
