@@ -36,9 +36,10 @@ jobs:
           npm install -g html-minifier-terser
           npm install -g uglify-js
           npm install -g clean-css-cli
-          find . -type f -name '*.html' -exec html-minifier-terser --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true -o {} {} \;
-          find . -type f -name '*.js' -exec uglifyjs -c -m -o {} {} \;
-          find . -type f -name '*.css' -exec cleancss -o {} {} \;
+          mkdir minified
+          find . -type f -name '*.html' -exec html-minifier-terser --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true -o minified/{} {} \;
+          find . -type f -name '*.js' -exec uglifyjs -c -m -o minified/{} {} \;
+          find . -type f -name '*.css' -exec cleancss -o minified/{} {} \;
 
       - name: Build And Deploy
         id: builddeploy
@@ -51,7 +52,7 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "/" # Built app content directory - optional
+          output_location: "minified" # Built app content directory - optional
           app_build_command: "echo 'No build step'" # Add this line to bypass the build step
           ###### End of Repository/Build Configurations ######
 
