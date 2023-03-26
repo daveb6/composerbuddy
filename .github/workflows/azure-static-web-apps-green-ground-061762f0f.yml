@@ -41,6 +41,12 @@ jobs:
           find . -type f -name '*.js' -exec uglifyjs -c -m -o minified/{} {} \;
           find . -type f -name '*.css' -exec cleancss -o minified/{} {} \;
 
+      - name: Install rsync
+        run: sudo apt-get install -y rsync
+
+      - name: Copy images to minified directory
+        run: rsync -avm --include='*/' --include='*.jpg' --include='*.jpeg' --include='*.png' --include='*.gif' --include='*.svg' --exclude='*' ./ ./minified/
+        
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
