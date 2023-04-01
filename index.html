@@ -10,10 +10,10 @@
 <body>
     <div class="parent" style="display: flex; align-items: center; flex-direction: column;">
         <div class=input-form>
-            <div>
-                <h1>Composer Buddy</h1>
+            <div style="border: 2px solid black; background-color: rgb(71, 135, 190); padding: 10px;">
+                <h2 style="font-weight: bold">Composer Buddy</h1><p>v1.0.0</p>
             </div>
-            <div>
+            <div style = "margin-top: 15px;">
                 <label for="num-chords">Number of Chords (2-8):</label>
                 <input type="range" id="num-chords" name="num-chords" value="4" min="2" max="8"
                     oninput="this.nextElementSibling.value = this.value">
@@ -57,5 +57,7 @@
     <script src="script.js"></script>
 
 </body>
-
+<footer style="text-align: center; margin-top: 20px;">
+    <p><a href="https://github.com/daveb6/composerbuddy" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
+  </footer>
 </html>
